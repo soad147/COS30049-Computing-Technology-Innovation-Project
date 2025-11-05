@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Misinformation Detection — Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script> 
+</head>
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="navwrap">
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="results.html">Results</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="results-root" class="results-grid">
+      <!-- LEFT PANEL -->
+      <div class="results-left">
+        <h1 class="results-title">
+          <span>Likely</span>
+          <span>Misinformation</span>
+          <span id="scoreText">(80%)</span>
+        </h1>
+
+       
+        <p id="whatWasAnalyzed" class="results-caption"></p>
+
+        <div class="gauge">
+          <div class="gauge-inner">
+            <div class="gauge-value" id="scoreValue">80%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="results-right">
+        <div class="results-card">
+          <div class="results-screen">
+            <div class="results-screen-body">
+              <!-- Doughnut (Chart.js) -->
+              <canvas id="donutChart" class="donut-canvas"></canvas>
+
+              <!-- Horizontal bars -->
+              <div id="d3Bars" class="bars-wrap"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- third chart (Plotly) -->
+        <div class="results-card below">
+          <div class="results-screen">
+            <div class="results-screen-body single">
+              <div id="plotlyChart" class="plotly-wrap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© 2025 Misinformation Detection • Results</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
